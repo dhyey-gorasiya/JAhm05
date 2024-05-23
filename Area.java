@@ -1,10 +1,15 @@
-package employee;
+package Example;
 
 class Area {
     private double length;
     private double breadth;
 
-    public void setDim(double length, double breadth) {
+    public Area() {
+        this.length = 5.0;
+        this.breadth = 5.0;
+    }
+
+    public Area(double length, double breadth) {
         this.length = length;
         this.breadth = breadth;
     }
@@ -14,12 +19,13 @@ class Area {
     }
 
     public static void main(String[] args) {
-        Area rectangle = new Area();
 
-        rectangle.setDim(5.0, 10.0);
+        Area rectangle1 = new Area(5.0, 10.0);
+        double area1 = rectangle1.getArea();
+        System.out.println("The area of the rectangle is: " + area1);
 
-        double area = rectangle.getArea();
-
-        System.out.println("The area of the rectangle is: " + area);
+        Area rectangle2 = new Area();
+        double area2 = rectangle2.getArea();
+        System.out.println("The area of the default rectangle is: " + area2);
     }
 }

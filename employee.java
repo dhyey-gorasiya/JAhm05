@@ -1,72 +1,71 @@
-package employee;
+package Example;
 
+import java.util.Scanner;
 public class employee {
 
-    private String name, email;
+    private String name;
+    private String designation;
     private int age;
 
-
-    public employee(String name, String email, int age) {
+    public employee() {
+        this.name = "Dhyey";
+        this.designation = "HR";
+        this.age = 21;
+    }
+    
+    public employee(String name, String designation, int age) {
         this.name = name;
-        this.email = email;
+        this.designation = designation;
         this.age = age;
     }
 
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public int getAge() {
-		return age;
-	}
-
-
-	public void setAge(int age) {
-		this.age = age;
-	}
-
-
-
-	@Override
-	public String toString() {
-		return "employee [name=" + name + ", email=" + email + ", age=" + age 
-				+ ", getName()=" + getName() + ", getEmail()=" + getEmail() + ", getAge()=" + getAge()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
-	}
-
-	public static void main(String[] args) {
-        employee emp = new employee("Dhyey","dhyey@gmail.com",22);
-
-        System.out.println("Name: " + emp.getName());
-        System.out.println("Email: " + emp.getEmail());
-        System.out.println("Age: " + emp.getAge());
-
-        emp.setName("Navdip");
-        emp.setEmail("navdip@gmail.com");
-        emp.setAge(21);
-
-        System.out.println("Updated Name: " + emp.getName());
-        System.out.println("Updated Email: " + emp.getEmail());
-        System.out.println("Updated Age: " + emp.getAge());
+    public String getName() {
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "employee [name=" + name + ", designation=" + designation + ", age=" + age + "]";
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+		 
+        System.out.print("Enter name: ");
+        String name = scanner.next();
+
+        System.out.print("Enter designation: ");
+        String designation = scanner.next();
+
+        System.out.print("Enter age: ");
+        int age = scanner.nextInt();
+
+        employee emp1 = new employee(name, designation, age);
+        System.out.println(emp1.toString());
+        
+        employee emp2 = new employee();
+        System.out.println(emp2.toString());
+
+        scanner.close();
+    }
 }
